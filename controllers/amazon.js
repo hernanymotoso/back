@@ -31,14 +31,20 @@ module.exports = function(app) {
 						};
 
 						const html = resp.data;
-						const selector1 = 'a.a-size-base';
-						const selector2 = 'span[data-a-color="base"]';
-						const selector3 = 'span.a-offscreen';  
+						// const selector1 = 'a.a-size-base';
+						// const selector2 = 'span[data-a-color="base"]';
+						// const selector3 = 'span.a-offscreen';  
+
+						const selector4 =  '.s-result-list.s-search-results.sg-row > .s-result-item' ;           //'a.a-link-normal';
+						// const selector5 = '>';
+						// const selector6 = 'span.a-size-medium';
 
 
-						list['prices'] = amazonSearch.searchProduct(html, selector1, selector2, selector3);
 
-						console.log(list['prices']);
+						list['prices'] = amazonSearch.searchProductPrice(html, selector4);
+						// list['description'] =	amazonSearch.searchProduct(html, selector4, selector5, selector6); 
+
+					//	console.log(list['description']);
 
 					
 
