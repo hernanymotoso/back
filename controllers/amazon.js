@@ -4,6 +4,8 @@ const Arequest = require('request');
 const cheerio = require('cheerio');
 // import axios
 const axios = require('axios');
+// import the module amazon-search
+const amazonSearch = require('../modules/amazon-search')
 
 
 module.exports = function(app) {
@@ -18,29 +20,29 @@ module.exports = function(app) {
 
 		const search = req.params.search;
 
-		//const url = `https://www.amazon.com.br/s?k=${search}&__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss`;
+		
 		const url = 'https://www.amazon.com.br/s?k=iphone&__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&ref=nb_sb_noss';
 
 		axios.get(url)
 				 .then(function (resp){
-
-						const $ = cheerio.load(resp.data);
-
-						var list = {
+						let list = {
 							'description' : 'none',
 							'prices' : []
 						};
 
-						// peguei os valores dos iphones 
-					//	$('span.a-price span.a-offscreen').each(function(i, element) {
-						$('a.a-size-base span[data-a-color="base"] span.a-offscreen').each(function(i, element) {
-							let el = $(this);
-							let prices = el.text();
-							list['prices'][i] = prices;
-							//console.log(list['prices']);
-						})
+						const html = resp.data;
+						const selector1 = 'a.a-size-base';
+						const selector2 = 'span[data-a-color="base"]';
+						const selector3 = 'span.a-offscreen';  
+
+
+						list['prices'] = amazonSearch.searchProduct(html, selector1, selector2, selector3);
 
 						console.log(list['prices']);
+
+					
+
+						
 						
 	
 
