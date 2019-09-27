@@ -35,7 +35,7 @@ module.exports = function(app) {
 						// const selector2 = 'span[data-a-color="base"]';
 						// const selector3 = 'span.a-offscreen';  
 
-						const selector4 =  '.s-result-list.s-search-results.sg-row > .s-result-item' ;           //'a.a-link-normal';
+						const selector4 =    '.s-result-list > .s-result-item';   // '.s-result-list.s-search-results.sg-row > .s-result-item' ;           //'a.a-link-normal';
 						// const selector5 = '>';
 						// const selector6 = 'span.a-size-medium';
 
@@ -44,14 +44,15 @@ module.exports = function(app) {
 						list['prices'] = amazonSearch.searchProductPrice(html, selector4);
 						// list['description'] =	amazonSearch.searchProduct(html, selector4, selector5, selector6); 
 
-					//	console.log(list['description']);
+						//	console.log(list['description']);
 
 					
+						// console.log(list['prices']);
+						
 
 						
 						
-	
-
+					
 				  })
 				 .catch(function (error){
 					 console.log(error);
