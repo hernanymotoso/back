@@ -14,7 +14,10 @@
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "consign": "^0.1.6",
+    "ejs": "^2.6.2",
+    "excel4node": "^1.7.2",
     "express": "^4.17.1",
+    "msexcel-builder": "0.0.2",
     "nodemon": "^1.19.1",
     "request": "^2.69.0"
   }

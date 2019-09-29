@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+   div{
+    max-width: 1440px;
+    width: 500px; 
+    background: rgb(24, 69, 153); 
+    margin: 0 auto; 
+    text-align: center;
+   }
+   table{
+     width: 100%;
+     text-align: left;
+   }
+   table, th, td{
+     border: 1px solid #000;
+     color: white;
+
+   }
+  
+  </style>
+</head>
+<body>
+  <div>
+    <form action="/amazon/search" method="POST">
+      <h3>Busque um produto</h3>
+      <input type="text" name="search" id="search" placeholde="Busque um produto" />
+      <input type="submit" value="Pesquisar"/> 
+    </form>
+
+    <% if(dados.descriptions) { %>
+      <table style="width: 100%;">
+        <tr>
+          <th>Descrições</th>
+          <th>Preços</th>
+        </tr>
+        
+        <% for(let i = 0; i < dados.descriptions.length; i++) { %>
+          <tr>
+            <td><%= dados.descriptions[i] %></td>
+            <td><%= dados.prices[i] %></td>
+          </tr>  
+        <% } %>  
+      
+      
+      </table>
+      <div>
+        <form action="/amazon/save" method="POST">
+          <input name="data" id="data" type="hidden" value="hernany" />
+          <input type="submit" value="Exportar planilha" />
+        </form>
+      </div>
+      
+      <% if(exported) {%>
+        <br/>
+        <h2>Arquivo exportado para pasta storage na raiz do projeto !</h2>
+      <% } %>
+      
+    <% } %>
+
+  </div>
+
+</body>
+</html>

@@ -2,6 +2,7 @@ const cheerio = require('cheerio');
 
 
 function searchProduct(html, selector1, selector2, selector3){
+ 
   
   const $ = cheerio.load(html);
       let descriptions = [];
@@ -10,42 +11,37 @@ function searchProduct(html, selector1, selector2, selector3){
       $(selector1+' '+selector2+' '+selector3).each(function(i, element) {
         let el = $(this);
         let description = el.text();
+        //console.log(description); 
+
         descriptions[i] = description; 
+        
         
       })
 
+      // console.log(descriptions);
       return descriptions;
-
-
+ 
+ 
 
 
 }
 
 function searchProductPrice (html, selector4){
   const $ = cheerio.load(html);
-  let descriptions = []; 
+  let prices = []; 
   
   $(selector4).each(function(i, element) {
     let el = $(this);
 
-    descriptions[i] = el.find('.a-section.a-spacing-none.a-spacing-top-small a.a-link-normal > span[data-a-color="base"] > span.a-offscreen').text();
+    prices[i] = el.find('.a-section.a-spacing-none.a-spacing-top-small a.a-link-normal > span[data-a-color="base"] > span.a-offscreen').text();
 
-    if(descriptions[i] == ''){    
-      descriptions[i] = el.find('.a-section.a-spacing-none.a-spacing-top-mini .a-row span.a-color-base').text();   
+    if(prices[i] == ''){    
+      prices[i] = el.find('.a-section.a-spacing-none.a-spacing-top-mini .a-row span.a-color-base').text();   
     }
-    
-    
-    console.log(i);
-    console.log(descriptions[i])
-
    
-
   })
 
-  //return descriptions;       
-
-
-
+  return prices; 
 }
 
 
