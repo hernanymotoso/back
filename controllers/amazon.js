@@ -1,5 +1,3 @@
-// import request
-const Arequest = require('request');
 // import cheerio
 const cheerio = require('cheerio');
 // import axios
