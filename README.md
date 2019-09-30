@@ -8,9 +8,9 @@
 ## Iniciando o projeto 
   Para iniciar o projeto faça um clone ou baixe(descopacte o arquivo zip) o mesmo 
   pro seu computador, navegue para pasta raiz do projeto através do cmd ou terminal e 
-  execulte os comandos: 
+  execute os comandos: 
       
-      npm install (Para instalar todas dependencias do projeto).
+      npm install (Para instalar todas dependências do projeto).
       npm start (Para iniciar o projeto).  
 
   Após os comandos, abrir o navegador e acessar localhost:3000 
