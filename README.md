@@ -1,6 +1,6 @@
 ## Projeto Seach-amazon Web Crawler
   Projeto que captura as descrições e os preços de produtos 
-  no site da amazon atraves de uma busca.
+  no site da amazon através de uma busca.
 
 ## Requisitos para rodar o programa
   Node js e NPM
