@@ -2,7 +2,7 @@
   Projeto que captura as descrições e os preços de produtos 
   no site da amazon através de uma busca.
 
-## Requisitos para rodar o programa
+## Requisitos para executar o programa
   Node js e NPM
 
 ## Iniciando o projeto 
